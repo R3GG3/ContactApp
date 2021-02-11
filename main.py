@@ -30,6 +30,14 @@ def new_contact():
 		name = request.form["name"]
 		email = request.form["email"]
 		number = request.form["number"]
+		try:
+			x = int(number)
+			number = x
+			del x
+		except:
+			flash("Wrong Phone Number!")
+			return render_template("new_contact.html")
+
 		filter_name = contacts.query.filter_by(name=name).first()
 		if filter_name:
 			flash("This contact is already registered!")
@@ -47,6 +55,7 @@ def delete_account():
 		number = request.form["number"]
 		contacts.query.filter_by(number=number).delete()
 		db.session.commit()
+		flash("Contact Deleted Succesfully!")
 		return redirect(url_for("home"))
 	else:
 		return render_template("delete.html")

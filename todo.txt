@@ -1,3 +1,4 @@
 - refactor code
 - make a design
 - make an anti-stupid mechanic
+- make flash works
