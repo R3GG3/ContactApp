@@ -2,9 +2,11 @@
 {% block title %}Display Page{% endblock %}
 {% block content %}
 {% for query in display %}
-<p>---{{query.name}}---</p>
-<p>[[{{query.email}}]]</p>
-<p>[[{{query.number}}]]</p>
+<div id="display">
+	<span><b>Name:</b> {{query.name}}</span>
+	<span><b>Email:</b> {{query.email}}</span>
+	<span><b>Phone nr:</b> {{query.number}}</span>
+</div>
 </br>
 {% endfor %}
 {% endblock %}

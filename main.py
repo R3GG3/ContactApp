@@ -22,13 +22,15 @@ class contacts(db.Model):
 
 @app.route("/")
 def home():
-	return render_template("index.html")
+	return redirect(url_for('display'))
 
 @app.route("/new_contact", methods=["POST", "GET"])
 def new_contact():
 	if request.method == "POST":
 		name = request.form["name"]
 		email = request.form["email"]
+		if email == None or email == "" or email == " ":
+			email = "Empty"
 		number = request.form["number"]
 		try:
 			x = int(number)

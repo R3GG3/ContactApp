@@ -1,0 +1,55 @@
+body{
+	background-color: rgb(0, 0, 20);
+	color: white;
+}
+
+form{
+	border: 2px solid blue;
+	width: 300px;
+	height: 300px;
+	margin: 20px 0px 0px 20px;
+}
+
+p{
+	margin-top: 10px;
+	padding: 10px;
+}
+
+input{
+	border-radius: 10px;
+	transition: all 80ms ease-in;
+}
+
+input:focus{
+	background-color: lightgray;
+}
+
+.btnek{
+	outline: none;
+	background-color: transparent;
+	border: 1px solid white;
+	border-radius: 20px;
+	color: white;
+	transition: all 200ms ease-in-out;
+}
+
+.btnek:hover{
+	transform: scale(1.1);
+	background-color: yellowgreen;
+}
+
+#delete{
+	height: 100%;
+}
+
+span{
+	text-align: center;
+	display: block;
+	font-size: 20px;
+	padding: 5px;
+}
+
+#display{
+	margin-top: 10px;
+	border: 2px solid green;
+}
