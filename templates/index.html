@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Main Page{% endblock %}
 {% block content %}
-<h3 class="container-fluid">Welcome on the Main Page, use the Navigate Bar to choose options!</h3>
+{% for query in display %}
+<div id="display">
+	<span><b>Name:</b> {{query.name}}</span>
+	<span><b>Email:</b> {{query.email}}</span>
+	<span><b>Phone nr:</b> {{query.number}}</span>
+</div>
+</br>
+{% endfor %}
 {% endblock %}

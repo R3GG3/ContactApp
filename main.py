@@ -21,8 +21,8 @@ class contacts(db.Model):
 		self.number = number
 
 @app.route("/")
-def home():
-	return redirect(url_for('display'))
+def display():
+	return render_template("index.html", display=contacts.query.all())
 
 @app.route("/new_contact", methods=["POST", "GET"])
 def new_contact():
@@ -62,9 +62,6 @@ def delete_account():
 	else:
 		return render_template("delete.html")
 
-@app.route("/display")
-def display():
-	return render_template("display.html", display=contacts.query.all())
 
 if __name__ == "__main__":
 	db.create_all()
